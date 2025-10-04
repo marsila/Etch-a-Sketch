@@ -1,10 +1,13 @@
 const container = document.querySelector(".container");
+const gridContainer = document.createElement("div");
+gridContainer.classList.add("grid-container");
+const btn = document.createElement("button");
 
-//const p = document.createElement("p");
 
-
-//p.textContent = "Hi there";
-//container.appendChild(p);
+btn.textContent = "Your Grid";
+btn.classList.add("btn");
+container.appendChild(btn);
+container.appendChild(gridContainer);
 //console.log(p.textContent);
 
 
@@ -12,7 +15,7 @@ const container = document.querySelector(".container");
     for (let i = 0; i <256; i++) {
         const div = document.createElement("div");
         div.setAttribute("class","box");
-        container.appendChild(div);        
+        gridContainer.appendChild(div);        
     }
     console.log("inside the fun");
     
