@@ -8,17 +8,31 @@ btn.textContent = "Your Grid";
 btn.classList.add("btn");
 container.appendChild(btn);
 container.appendChild(gridContainer);
-//console.log(p.textContent);
+
+btn.addEventListener('click',()=> {
+    gridContainer.textContent='';
+    const userGrid = prompt("Chose the length of your gride!");
+    const gridLength = Number(userGrid);
+    console.log(`gridLength = ${gridLength}`);    
+    creatGrid(gridLength);
+});
 
 
-//let test = () => {
-    for (let i = 0; i <256; i++) {
-        const div = document.createElement("div");
-        div.setAttribute("class","box");
-        gridContainer.appendChild(div);        
+function creatGrid(gridLength) {
+    gridContainer.style.display='grid';
+    gridContainer.style.gridTemplateColumns =`repeat(${gridLength}, 1fr)` ;
+    const totalSize = gridLength * gridLength;
+    for (let i = 0; i < totalSize; i++) {
+        const box = document.createElement("div");
+        box.setAttribute("class","box");
+        box.textContent=' ';
+        gridContainer.appendChild(box);        
     }
-    console.log("inside the fun");
+} 
+
+
     
-//}
-//test();
+    
+
+
 
