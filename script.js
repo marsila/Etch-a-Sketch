@@ -11,10 +11,14 @@ container.appendChild(gridContainer);
 
 btn.addEventListener('click',()=> {
     gridContainer.textContent='';
-    const userGrid = prompt("Chose the length of your gride!");
+    const userGrid = prompt("Chose the length of your gride! No more than 100 !");
     const gridLength = Number(userGrid);
-    console.log(`gridLength = ${gridLength}`);    
-    creatGrid(gridLength);
+    console.log(`gridLength = ${gridLength}`);
+    if (gridLength > 100){
+        gridContainer.textContent = `please enter a number less than 100`;
+    } else {
+        creatGrid(gridLength);
+    } 
 });
 
 
@@ -29,12 +33,17 @@ function creatGrid(gridLength) {
         gridContainer.appendChild(box);        
     }
 } 
-gridContainer.addEventListener('click',(e)=>{
+gridContainer.addEventListener('mousedown',(e)=>{
     if (e.target.tagName ==='SPAN'){
+        const CellOpacity = Math.random();
+        console.log(`CellOpacity : ${CellOpacity.toFixed(2)}`);
+        e.target.style.opacity = CellOpacity.toFixed(2)
         e.target.classList.toggle("etch");
         
     }
 })
+
+
 
 
 

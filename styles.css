@@ -45,7 +45,6 @@ main {
 .grid-container {
     margin: 0.5rem;
     align-items: center;
-    border: 1px solid black;
     width:100%;
     display: grid;
 }
