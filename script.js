@@ -23,12 +23,19 @@ function creatGrid(gridLength) {
     gridContainer.style.gridTemplateColumns =`repeat(${gridLength}, 1fr)` ;
     const totalSize = gridLength * gridLength;
     for (let i = 0; i < totalSize; i++) {
-        const box = document.createElement("div");
+        const box = document.createElement("span");
         box.setAttribute("class","box");
         box.textContent=' ';
         gridContainer.appendChild(box);        
     }
 } 
+gridContainer.addEventListener('click',(e)=>{
+    if (e.target.tagName ==='SPAN'){
+        e.target.classList.toggle("etch");
+        
+    }
+})
+
 
 
     
